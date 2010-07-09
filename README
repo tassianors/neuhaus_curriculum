@@ -1,0 +1,24 @@
+CV, a LaTeX package for typesetting a curriculum vitae.
+
+Copyright (C) 2001  Philipp Maier (pmaier@yahoo.com)
+
+The package consists of three files:
+
+CV.sty      		LaTeX package
+CVCTAN.tex  		Example curriculum vitae
+ApplicationLetter 	Example application letter
+
+I have decided to include an example application letter as several people 
+requested it. It is based on application letters I wrote, so it uses a 
+German class. Unfortunately, it might require some experimenting for 
+English speaking TeX-Users to obtain the required results...
+
+This is the first style I have written, and I am neither a LaTeX expert, 
+nor a programmer, so please don't be too harsh on me... :-)
+
+
+This package is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+

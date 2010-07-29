@@ -1,24 +1,24 @@
-INPUT=cvNeuhaus
-OUTPUT=output/$(INPUT)
+INPUT=cvNeuhaus_pt
+OUTPUT=output
 
-all:
-	latex src/$(INPUT)_en.tex
-	latex src/$(INPUT)_pt.tex
+all: $(INPUT).pdf
+	mv $(INPUT).pdf $(OUTPUT)/
 
-pdf:
-	dvipdf $(INPUT)_en.dvi $(OUTPUT)_en.pdf
-	dvipdf $(INPUT)_pt.dvi $(OUTPUT)_pt.pdf
+$(INPUT).dvi: src/$(INPUT).tex 
+	latex src/$(INPUT).tex
+	latex src/$(INPUT).tex
 
-pt:
-	latex src/$(INPUT)_pt.tex
-	dvipdf $(INPUT)_pt.dvi $(OUTPUT)_pt.pdf
-
-en:
-	latex src/$(INPUT)_en.tex
-	dvipdf $(INPUT)_en.dvi $(OUTPUT)_en.pdf
-
+$(INPUT).ps:$(INPUT).dvi
+	dvips -t a4 -Ppdf $(INPUT)
+	
+$(INPUT).pdf:$(INPUT).ps
+	ps2pdf -dMaxSubsetPct=100 -dSubsetFonts=true -dEmbedAllFonts=true -dCompatibilityLevel=1.2 -sPAPERSIZE=a4 $(INPUT).ps
+		
 clean:
-	rm *.aux *.dvi *.log
+	rm -f  *~ *.bak *.o *.ps *.dvi *.aux *.log *.backup *.bbl *.blg *.loa *.los html.sty *.out
 
-clobber:clean
-	rm *.pdf
+clobber: clean
+	rm -f $(INPUT).pdf 
+
+install:
+

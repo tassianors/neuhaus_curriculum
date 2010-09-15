@@ -16,7 +16,7 @@ $(INPUT).pdf:$(INPUT).ps
 	ps2pdf -dMaxSubsetPct=100 -dSubsetFonts=true -dEmbedAllFonts=true -dCompatibilityLevel=1.2 -sPAPERSIZE=a4 $(INPUT).ps
 		
 clean:
-	rm -f  *~ *.bak *.o *.ps *.dvi *.aux *.log *.backup *.bbl *.blg *.loa *.los html.sty *.out
+	rm -f  *~ *.bak *.o *.ps *.dvi *.aux *.log *.backup *.bbl *.blg *.loa *.los html.sty *.out *.swt
 
 clobber: clean
 	rm -f $(INPUT).pdf 

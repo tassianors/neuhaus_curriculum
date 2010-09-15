@@ -1,4 +1,4 @@
-
+# my makefile
 INPUT=cvNeuhaus_pt
 OUTPUT=output
 
